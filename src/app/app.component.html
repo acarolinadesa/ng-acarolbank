@@ -1,5 +1,7 @@
-<!-- Aqui chamamos os componentes criados -->
-<app-nova-transferencia></app-nova-transferencia>
-<app-extrato></app-extrato>
-
-
+<header class="header">
+  <a routerLink="extrato">acarolbank</a>
+  <a routerLink="nova-transferencia" routerLinkActive="ativo">Nova Transferência</a>
+</header>
+<main>
+  <router-outlet> </router-outlet>
+</main>
