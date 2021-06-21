@@ -10,11 +10,4 @@ export class AppComponent {
   title = 'acarolrenbank'
   constructor(private service: TransferenciaService){
   }
-
-  // Passando o evento para a funcao adicionar no service
-  transferir($event: any){
-    console.log($event)
-    this.service.adicionar($event)
-  }
-
 }

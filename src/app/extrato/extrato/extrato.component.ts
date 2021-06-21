@@ -1,3 +1,4 @@
+import { Transferencia } from './../../models/transferencia.model';
 import { TransferenciaService } from './../../services/transferencia.service';
 import { Component, Input, OnInit } from '@angular/core';
 
@@ -13,7 +14,11 @@ export class ExtratoComponent implements OnInit {
 
   ngOnInit(): void {
     // Valor que existe no get de transferencias eh atribuido para o array local de transferencias
-    this.transferencias = this.service.transferencias
+    // this.transferencias = this.service.transferencias
+    this.service.listarTodas().subscribe((transferencias : Transferencia[]) => {
+    console.table(transferencias)
+    this.transferencias = transferencias
+    })
   }
 
 }
