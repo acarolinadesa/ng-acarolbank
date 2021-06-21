@@ -1,16 +1,30 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID, DEFAULT_CURRENCY_CODE} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { NovaTransferenciaComponent } from './nova-transferencia/nova-transferencia/nova-transferencia.component';
+import { FormsModule } from '@angular/forms';
+import { ExtratoComponent } from './extrato/extrato/extrato.component';
+import { registerLocaleData } from '@angular/common';
+import localePT from '@angular/common/locales/pt'
 
+registerLocaleData(localePT, 'pt')
+
+// Aqui se declara todos os componentes
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NovaTransferenciaComponent,
+    ExtratoComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    {provide: LOCALE_ID, useValue: 'pt' },
+    {provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL' }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
